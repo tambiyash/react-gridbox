@@ -34,7 +34,7 @@ export class GridItem extends React.Component<IGridItemProps, {}> {
     };
 
     public render() {
-        const { cell, alignSelf, padding } = this.props;
+        const { cell, alignSelf, padding, ...props } = this.props;
         const { colStart, colEnd, colSpan, rowStart, rowEnd, rowSpan } = cell;
 
          if(!colStart || !rowStart) {
@@ -56,7 +56,7 @@ export class GridItem extends React.Component<IGridItemProps, {}> {
         `;
 
         return (
-            <StyledGridItem {...this.props}/>
+            <StyledGridItem {...props}/>
         );
     }
 }

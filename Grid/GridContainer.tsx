@@ -19,7 +19,7 @@ interface IGridContainerProps {
 
 }
 
-export class GridContainer extends React.Component<IGridContainerProps, {}> {
+class GridContainer extends React.Component<IGridContainerProps, {}> {
     public static Grid = GridItem;
 
     public static defaultProps = {
@@ -37,6 +37,7 @@ export class GridContainer extends React.Component<IGridContainerProps, {}> {
             alignItems,
             alignContent,
             minHeight,
+            ...props
          } = this.props;
 
          if(!columns || !rows) {
@@ -61,7 +62,9 @@ export class GridContainer extends React.Component<IGridContainerProps, {}> {
         `;
 
         return (
-            <StyledGridContainer {...this.props} />
+            <StyledGridContainer {...props} />
         )
     }
 }
+
+export default GridContainer;
